@@ -6,6 +6,15 @@ $(document).ready( function() {
 		var tags = $(this).find("input[name='tags']").val();
 		getUnanswered(tags);
 	});
+
+	$('.inspiration-getter').submit( function(event) {
+		//zero our results if previous search runs
+		$('.results').html('');
+		//get the value of the anwerers the user submits
+		var question = $(this).find("input[name='answerers']").val();
+		console.log(question);
+		showQuestion(question);
+	})
 });
 
 // this function takes the question object returned by StackOverflow 
